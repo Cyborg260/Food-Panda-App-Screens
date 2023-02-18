@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-
 const TopView = () => {
 const navigation = useNavigation();
     return (
@@ -62,17 +61,12 @@ const styles = StyleSheet.create({
         height: 80,
         paddingHorizontal: 20,
         width:"100%",
-        
-        // zIndex:1,
-        // position:"absolute",
-      
     },
     imgView: {
         flexDirection: "row",
         alignItems: "center",
         width: 120,
         justifyContent: "flex-end",
-
     },
     drawerImg: {
         width: 28,
@@ -89,13 +83,11 @@ const styles = StyleSheet.create({
         height: 28,
         tintColor: "#fff",
         marginHorizontal: 5,
-
     },
     txt1: {
         fontSize: 18,
         fontWeight: "bold",
         color: "#fff",
-
     },
     txt2: {
         color: "#fff"

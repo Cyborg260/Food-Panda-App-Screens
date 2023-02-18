@@ -10,19 +10,18 @@ const Drawer = createDrawerNavigator();
 
 const DrawerStack = () => {
   return (
-    
-    <Drawer.Navigator 
-    drawerContent={props => <CustomDrawer {...props}/> }
-    screenOptions={{
-      headerShown:false,
-      drawerActiveBackgroundColor:"#fff",
-      drawerInactiveBackgroundColor:"#fff",
-      drawerActiveTintColor:"black",
-      
-    }}
+
+    <Drawer.Navigator
+      drawerContent={props => <CustomDrawer {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerActiveBackgroundColor: "#fff",
+        drawerInactiveBackgroundColor: "#fff",
+        drawerActiveTintColor: "black",
+      }}
     >
       <Drawer.Screen name="MainScreen" component={MainScreen} options={{ headerShown: false }} />
-      {/* <Drawer.Screen name="Pro" component={Profile} options={{ headerShown: false }} /> */}
+      <Drawer.Screen name="Pro" component={Profile} options={{ headerShown: false }} />
     </Drawer.Navigator>
   )
 }

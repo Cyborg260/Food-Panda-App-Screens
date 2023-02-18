@@ -87,7 +87,6 @@ const CustomDrawer = props => {
                     Credit and payment methods
                 </Text>
             </View>
-
             <TouchableOpacity
                 activeOpacity={0.5}
                 >
@@ -401,9 +400,7 @@ const CustomDrawer = props => {
                         Log out
                     </Text>
                 </View>
-            </TouchableOpacity>
-
-          
+            </TouchableOpacity>    
         </View>
     )
 }

@@ -7,46 +7,11 @@ import SecondRoute from './Shops';
 import { useNavigation } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
-export default function SearchEntry() {
+const SearchEntry = () => {
   const navigation = useNavigation();
   const layout = useWindowDimensions();
 
-
-  //   const Data = [
-  //     {
-  //       title: "pizza"
-  //   },
-  //   {
-  //     title: "KFC"
-  //   },
-  //   {
-  //     title: "pizza point"
-  //   },
-  //   {
-  //     title: "burger"
-  //   },
-  //   {
-  //     title: "macdonalds"
-  //   },
-  //   {
-  //     title: "kaybees"
-  //   },
-  //   {
-  //     title: "pizza fries"
-  //   },
-  //   {
-  //     title: "red apple"
-  //   },
-  //   {
-  //     title: "zinger burger"
-  //   },
-  //   {
-  //     title: "burger lab"
-  //   },
-  //   {
-  //     title: "Roll"
-  //   },
-  // ]
+  //====================================== Array of object ===========================================//
   const Data1 = [
     {
       title: "Usmania"
@@ -119,15 +84,13 @@ export default function SearchEntry() {
     },
   ]
 
+  //====================================== UseState ===========================================//
   const [searchText, onChangeSearch] = React.useState('');
   const [filteredData, setFilteredData] = React.useState([]);
   const [index, setIndex] = React.useState(0);
   console.log("index==>", index);
 
-
-  // const [filteredData2, setFilteredData2] = React.useState([]);/
-
-
+  //====================================== UseEffect ===========================================//
   React.useEffect(() => {
     const filtered = filteredData.filter(item =>
       item.title.toLowerCase().includes(searchText.toLowerCase()),
@@ -144,7 +107,6 @@ export default function SearchEntry() {
 
     console.log("i am at==>", index);
 
-    // onChangeSearch(Data1);
     if (index == 1) {
       console.log("i am at==>", index);
       setFilteredData(Data2);
@@ -177,11 +139,11 @@ export default function SearchEntry() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
+      {/* <StatusBar
         animated={true}
         backgroundColor="#fff"
         barStyle="dark-content"
-      />
+      /> */}
       <View style={styles.container2}>
         <View style={styles.imgView}>
           <TouchableOpacity
@@ -259,6 +221,7 @@ export default function SearchEntry() {
     </SafeAreaView>
   );
 }
+export default SearchEntry;
 const styles = StyleSheet.create({
   container: {
     flex: 1

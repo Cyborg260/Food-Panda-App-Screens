@@ -8,20 +8,20 @@ const SearchView = () => {
     console.log(animateHeaderHeight, "hello")
 
     return (
-       
-<View style={{}}>
+
+        <View style={{}}>
 
             <Animated.View style={[
                 styles.container,
                 {
                     height: animateHeaderHeight,
                 },
-                
+
             ]}>
                 <TouchableOpacity
                     style={styles.touchableOpacity}
                     activeOpacity={1}
-                    onPress={() => navigation.navigate("SearchEntry")}
+                    onPress={() => navigation.navigate("Search")}
                 >
                     <View style={styles.insideView}>
                         <Image
@@ -35,7 +35,7 @@ const SearchView = () => {
                 </TouchableOpacity>
 
             </Animated.View>
-            </View>
+        </View>
 
     )
 }
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
         height: 80,
         alignItems: "center",
         justifyContent: "center",
-        left:0,
-        top:0,
-        right:0,
-        position:"absolute",
-        zIndex:1
+        left: 0,
+        top: 0,
+        right: 0,
+        position: "absolute",
+        zIndex: 1
     },
     touchableOpacity: {
         flexDirection: "row",
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         height: 45,
         paddingLeft: 10,
         marginLeft: 10,
-      
+
     },
     txt: {
         fontSize: 16,

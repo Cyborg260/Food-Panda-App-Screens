@@ -1,115 +1,62 @@
 import { View, Text, StyleSheet, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native';
 //import Screen//
 import DealsScreen from './DealsScreen';
+import { useNavigation } from '@react-navigation/native';
+import { Data } from '../utils/Data/CrusinesData';
 
-const Data = [
-    {
-        image: require("../assets/fp-13.png"),
-        title: "Pizza",
-    },
-    {
-        image: require("../assets/fp-15.png"),
-        title: "Cakes",
-    },
-    {
-        image: require("../assets/fp-16.png"),
-        title: "Fast Food",
-    },
-    {
-        image: require("../assets/fp-17.png"),
-        title: "Italian",
-    },
-    {
-        image: require("../assets/fp-18.png"),
-        title: "Burgers",
-    },
-    {
-        image: require("../assets/fp-19.png"),
-        title: `Fried Wings`,
-    },
-    {
-        image: require("../assets/fp-20.png"),
-        title: "Roasted",
-    },
-    {
-        image: require("../assets/fp-21.png"),
-        title: "BBQ",
-    },
-    {
-        image: require("../assets/fp-22.png"),
-        title: "Beverages",
-    },
-    {
-        image: require("../assets/fp-13.png"),
-        title: "Pizza",
-    },
-    {
-        image: require("../assets/fp-17.png"),
-        title: "Italian",
-    },
-  
 
-];
 
-const Items = ({ title, image }) => (
-    <View style={{
-        padding: 10,
-        justifyContent:"center",
-        alignItems:"center",
-    }}>
-        <View style={{
-            width: 80,
-            height: 80,
-            borderRadius:10,
-            shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 2,
-},
-shadowOpacity: 0.25,
-shadowRadius: 3.84,
-
-elevation: 2,
-            // backgroundColor:"red"    
-
-        }}>
-
-        <Image
-            style={{
-                resizeMode: "contain",
-                width: 80,
-                height: 80,
-                // backgroundColor:"red"
-                borderRadius:10
-                
-            }}
-            source={image}
-            />
-            </View>
-
-        <Text style={{
-            color: "black",
-            marginHorizontal: 10
-        }}>
-            {title}
-        </Text>
-    </View>
-)
 const ItemsScreen = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
     const renderItem = ({ item }) => (
         <Items
-            image={item.image}
-            title={item.title}
+        image={item.image}
+        title={item.title}
         />
-    )
-    return (
-        <View style={{
-            flex:1,
-            marginTop:70
-        }}>
+        )
+        const Items = ({ title, image }) => (
+            <TouchableOpacity style={{
+                padding: 10,
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+                activeOpacity={0.65}
+                onPress={() => navigation.navigate("RestCateg")}
+            >
+                <View style={{
+                    width: 80,
+                    height: 80,
+                    borderRadius: 10,
+                    shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 2,
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 3.84,
+                    elevation: 2,
+                }}>
+                    <Image
+                        style={{
+                            resizeMode: "contain",
+                            width: 80,
+                            height: 80,
+                            borderRadius: 10
+                        }}
+                        source={image}
+                    />
+                </View>
+                <Text style={{
+                    color: "black",
+                    marginHorizontal: 10
+                }}>
+                    {title}
+                </Text>
+            </TouchableOpacity>
+        )
+    const renderFirstView = () => {
+        return (
             <View style={styles.container1}>
 
                 {/* //1st colomn// */}
@@ -339,6 +286,11 @@ const ItemsScreen = () => {
 
 
             </View>
+        )
+    }
+
+    const renderSecondView = () => {
+        return (
             <View>
                 <Text style={{
                     fontSize: 20,
@@ -350,6 +302,11 @@ const ItemsScreen = () => {
                     Your Restaurants
                 </Text>
             </View>
+        )
+    }
+
+    const renderThirdView = () => {
+        return (
             <ScrollView style={{
                 flexDirection: "row",
                 // backgroundColor: "red",
@@ -411,7 +368,6 @@ const ItemsScreen = () => {
                     </View>
                 </View>
 
-
                 {/* //2nd Restaurant// */}
                 <View style={{
                     // backgroundColor:"yellow",
@@ -425,9 +381,8 @@ const ItemsScreen = () => {
                     }}>
                         <TouchableOpacity
                             activeOpacity={0.9}
-                            onPress={() => navigation.navigate("RestaurantsScreen")}
+                            onPress={() => navigation.navigate("Restaurants")}
                         >
-
                             <Image
                                 style={{
                                     width: 260,
@@ -514,6 +469,11 @@ const ItemsScreen = () => {
                     </View>
                 </View>
             </ScrollView>
+        )
+    }
+
+    const renderFourthView = () => {
+        return (
             <View>
                 <Text style={{
                     fontSize: 20,
@@ -526,6 +486,11 @@ const ItemsScreen = () => {
                     Your daily deals
                 </Text>
             </View>
+        )
+    }
+
+    const renderFifthView = () => {
+        return (
             <ScrollView
                 style={{
                     flexDirection: "row",
@@ -538,7 +503,8 @@ const ItemsScreen = () => {
                 <View style={{
                     width: 180,
                     height: 240,
-                    backgroundColor:"red"
+                    // backgroundColor: "red"
+                    // marginHorizontal: 20
 
                 }}>
                     <Image
@@ -553,16 +519,16 @@ const ItemsScreen = () => {
                     />
                 </View>
                 <View style={{
-                     width: 180,
-                     height: 240,
+                    width: 180,
+                    height: 240,
+                    marginHorizontal: 20,
                     // backgroundColor:"yellow"
-
                 }}>
                     <TouchableOpacity style={{
 
                     }}
                         activeOpacity={0.9}
-                        onPress={() => navigation.navigate("DealsScreen")}
+                        onPress={() => navigation.navigate("Deals")}
                     >
 
                         <Image
@@ -597,9 +563,8 @@ const ItemsScreen = () => {
                 <View style={{
                     width: 180,
                     height: 240,
-                    // backgroundColor:"yellow"
-                    marginHorizontal:"2%"
-
+                    // backgroundColor: "yellow",
+                    marginHorizontal: 20
                 }}>
                     <Image
                         style={{
@@ -607,15 +572,15 @@ const ItemsScreen = () => {
                             height: 240,
                             resizeMode: "contain",
                             borderRadius: 10,
-
                         }}
                         source={require("../assets/fp-12.png")}
                     />
                 </View>
                 <View style={{
-                     width: 180,
-                     height: 240,
-                    // backgroundColor:"yellow"
+                    width: 180,
+                    height: 240,
+                    marginHorizontal: 20,
+                    backgroundColor: "yellow"
 
                 }}>
                     <Image
@@ -630,8 +595,9 @@ const ItemsScreen = () => {
                     />
                 </View>
                 <View style={{
-                     width: 180,
-                     height: 240,
+                    width: 180,
+                    height: 240,
+                    marginRight: 20
                     // backgroundColor:"yellow"
 
                 }}>
@@ -647,6 +613,11 @@ const ItemsScreen = () => {
                     />
                 </View>
             </ScrollView>
+        )
+    }
+
+    const renderSixthView = () => {
+        return (
             <View>
                 <Text style={{
                     fontSize: 20,
@@ -658,6 +629,11 @@ const ItemsScreen = () => {
                     Cuisines
                 </Text>
             </View>
+        )
+    }
+
+    const renderSeventhView = () => {
+        return (
             <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -670,18 +646,22 @@ const ItemsScreen = () => {
                         data={Data}
                         renderItem={renderItem}
                         numColumns={6}
-                    // horizontal={true}
                     />
                 </View>
             </ScrollView>
+        )
+    }
+
+    const renderEightView = () => {
+        return (
             <TouchableOpacity
                 activeOpacity={0.5}
             >
-{/* //FoodPanda Logo// */}
+                {/* //FoodPanda Logo// */}
                 <View style={{
                     flexDirection: "row",
                     marginVertical: 40,
-                    marginBottom: 120,
+                    marginBottom: 20,
                     borderRadius: 10,
                     borderWidth: 1,
                     borderColor: "lightgrey",
@@ -692,14 +672,14 @@ const ItemsScreen = () => {
                     alignItems: "center",
                     padding: 10,
                     shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 2,
-},
-shadowOpacity: 0.25,
-shadowRadius: 3.84,
+                    shadowOffset: {
+                        width: 0,
+                        height: 2,
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 3.84,
 
-elevation: 1,
+                    elevation: 1,
                 }}>
                     <View>
                         <Text style={{
@@ -728,6 +708,21 @@ elevation: 1,
                     </View>
                 </View>
             </TouchableOpacity>
+        )
+    }
+
+    return (
+        <View style={{
+            marginTop: 70,
+        }}>
+            {renderFirstView()}
+            {renderSecondView()}
+            {renderThirdView()}
+            {renderFourthView()}
+            {renderFifthView()}
+            {renderSixthView()}
+            {renderSeventhView()}
+            {renderEightView()}
         </View>
     )
 }

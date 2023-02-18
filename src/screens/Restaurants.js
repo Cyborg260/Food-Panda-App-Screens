@@ -14,24 +14,6 @@ const Items = ({ title }) => (
 
 const FirstRoute = ({ ...props }) => {
 
-  // console.log("we get 0 ==>", props.shuja);
-
-  // const [searchText, onChangeSearch] = useState('');
-  // const [filteredData, setFilteredData] = useState([]);
-
-  // useEffect(() => {
-  //   const filtered = Data.filter(item =>
-  //     item.title.toLowerCase().includes(searchText.toLowerCase()),
-  //   );
-  //   if (searchText === '') {
-  //     return setFilteredData(Data);
-  //   }
-
-  //   setFilteredData(filtered);
-  // }, [searchText]);
-
-
-
   const renderItem = ({ item }) => (
     <Items
       title={item.title}
@@ -84,7 +66,6 @@ const styles = StyleSheet.create({
   },
 
   itemContainer: {
-    // backgroundColor:"yellow",
     borderWidth: 1,
     borderRadius: 20,
     borderColor: "lightgrey",
@@ -96,7 +77,6 @@ const styles = StyleSheet.create({
 
   txtView: {
     fontSize: 16,
-    // backgroundColor:"red",
     color: "black",
     textAlign: "center",
 

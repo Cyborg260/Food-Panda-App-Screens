@@ -7,20 +7,20 @@ const RestaurantsSceen = () => {
     return (
         <View style={styles.container}>
             <View style={{
-                marginVertical:10,
+                marginVertical: 10,
             }}>
 
 
-            <TouchableOpacity
-                activeOpacity={0.85}
-                onPress={() => navigation.goBack()}
+                <TouchableOpacity
+                    activeOpacity={0.85}
+                    onPress={() => navigation.goBack()}
                 >
-                <Image
-                    style={styles.img}
-                    source={require("../assets/icons8-left-50.png")}
+                    <Image
+                        style={styles.img}
+                        source={require("../assets/icons8-left-50.png")}
                     />
-            </TouchableOpacity>
-                    </View>
+                </TouchableOpacity>
+            </View>
             <View style={styles.indicator}>
                 <ActivityIndicator
                     size="large"

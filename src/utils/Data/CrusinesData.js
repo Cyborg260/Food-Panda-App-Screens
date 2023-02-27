@@ -1,46 +1,59 @@
+import {images} from '../Images';
+
 export const Data = [
-    {
-        image: require("../../assets/fp-13.png"),
-        title: "Pizza",
-    },
-    {
-        image: require("../../assets/fp-15.png"),
-        title: "Cakes",
-    },
-    {
-        image: require("../../assets/fp-16.png"),
-        title: "Fast Food",
-    },
-    {
-        image: require("../../assets/fp-17.png"),
-        title: "Italian",
-    },
-    {
-        image: require("../../assets/fp-18.png"),
-        title: "Burgers",
-    },
-    {
-        image: require("../../assets/fp-19.png"),
-        title: `Fried Wings`,
-    },
-    {
-        image: require("../../assets/fp-20.png"),
-        title: "Roasted",
-    },
-    {
-        image: require("../../assets/fp-21.png"),
-        title: "BBQ",
-    },
-    {
-        image: require("../../assets/fp-22.png"),
-        title: "Beverages",
-    },
-    {
-        image: require("../../assets/fp-13.png"),
-        title: "Pizza",
-    },
-    {
-        image: require("../../assets/fp-17.png"),
-        title: "Italian",
-    },
+  {
+    id: 0,
+    image: images.fp13,
+    title: 'Pizza',
+  },
+  {
+    id: 1,
+    image: images.fp15,
+    title: 'Cakes',
+  },
+  {
+    id: 2,
+    image: images.fp16,
+    title: 'Fast Food',
+  },
+  {
+    id: 3,
+    image: images.fp17,
+    title: 'Italian',
+  },
+  {
+    id: 4,
+    image: images.fp18,
+    title: 'Burgers',
+  },
+  {
+    id: 5,
+    image: images.fp19,
+    title: `Fried Wings`,
+  },
+  {
+    id: 6,
+    image: images.fp20,
+    title: 'Roasted',
+  },
+  {
+    id: 7,
+    image: images.fp21,
+    title: 'BBQ',
+  },
+  {
+    id: 8,
+    image: images.fp22,
+    title: 'Beverages',
+  },
+  {
+    id: 9,
+    image: images.fp13,
+    title: 'Pizza',
+  },
+  {
+    id: 10,
+    image: images.fp17,
+    title: 'Italian',
+  },
 ];

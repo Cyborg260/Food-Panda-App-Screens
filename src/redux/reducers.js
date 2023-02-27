@@ -3,7 +3,7 @@ import {
 } from "./actionType"
 
 const initialState = {
-    counter: 0,
+    quantity: 0,
     price: 0,
     product: {}
 }
@@ -11,10 +11,11 @@ const initialState = {
 export const mainreducers = (state = initialState, action) => {
     switch (action.type) {
         case ADDTOCART:
+            
             return {
                 ...state,
-                counter: action.payload,
-                price: action.rupees,
+                quantity: action.payload.quantity,
+                price: action.payload.price,
             }
         default:
             return state;

@@ -104,7 +104,7 @@ const SelectedCateg = ({route}) => {
         </View>
         <View style={styles.detailTxtView}>
           <Text style={styles.detailTxt}>{product.detail}</Text>
-        </View>
+        </View>       
         <View style={styles.lineView}></View>
         <Text style={styles.specialHeadingTxt}>Special instructions</Text>
         <View style={styles.specialTxtView}>

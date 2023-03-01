@@ -14,10 +14,16 @@ import SelectedRest from '../screens/SelectedRestaurant';
 import ViewCart from '../screens/ViewCart';
 import Home from '../screens/Home';
 import SplashScreen from '../screens/SplashScreen';
+import EnterLocScreen from '../screens/EnterLocScreen';
+import MapScreen from '../screens/MapScreen';
+import EnterMobileNo from '../screens/EnterMobileNo';
+import VerifyMobScreen from '../screens/VerifyMobScreen';
 
 const Stack = createStackNavigator();
 export const ScreenNames = {
   SplashScreen: 'SplashScreen',
+  EnterLocation: 'EnterLocation',
+  MapScreen: 'MapScreen',
   DrawerScreen: 'DrawerStack',
   SearchScreen: 'Search',
   DealScreen: 'Deals',
@@ -25,6 +31,8 @@ export const ScreenNames = {
   SelectedRest: 'SelectedRestaurant',
   CartScreen: 'CartScreen',
   Home: 'Home',
+  EnterMobileNo: 'EnterMobileNo',
+  VerfifyMobNo: 'VerifyMob',
 };
 const config = {
   animation: 'spring',
@@ -49,7 +57,7 @@ const closeconfig = {
 const StackScreens = () => {
   const options = {
     headerShown: false,
-    gestureEnabled: true,
+    gestureEnabled: false,
     gestureDirection: 'horizontal',
     transitionSpec: {
       open: config,
@@ -70,6 +78,22 @@ const StackScreens = () => {
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="EnterLocation"
+        component={EnterLocScreen}
+        options={options}
+      />
+      <Stack.Screen name="MapScreen" component={MapScreen} options={options} />
+      <Stack.Screen
+        name="EnterMobileNo"
+        component={EnterMobileNo}
+        options={options}
+      />
+      <Stack.Screen
+        name="VerifyMob"
+        component={VerifyMobScreen}
         options={options}
       />
       <Stack.Screen

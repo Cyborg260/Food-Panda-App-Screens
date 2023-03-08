@@ -46,9 +46,10 @@ const styles = StyleSheet.create({
     color: Colors.deeppink,
   },
   img: {
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
     position: 'absolute',
     left: 15,
+    resizeMode: 'contain',
   },
 });

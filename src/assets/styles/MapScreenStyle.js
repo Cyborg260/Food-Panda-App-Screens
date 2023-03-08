@@ -13,6 +13,8 @@ export default StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+    height:"90%",
+    marginTop:70
   },
   confirmBtn: {
     marginTop: 510,

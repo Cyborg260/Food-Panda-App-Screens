@@ -47,7 +47,7 @@ const MainScreen = () => {
         ref={refSheet}
         closeOnDragDown={true}
         closeOnPressMask={true}
-        height={300}
+        height={360}
         openDuration={250}
         customStyles={{
           container: {
@@ -59,7 +59,6 @@ const MainScreen = () => {
             width: 50,
           },
         }}>
-        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={MainScreenStyles.rbSheetTxt}>Sign up or Log in</Text>
           <BottomButton
             backgroundColor={Colors.white}
@@ -103,7 +102,6 @@ const MainScreen = () => {
               </Text>
             </Text>
           </View>
-        </ScrollView>
       </RBSheet>
     </SafeAreaView>
   );

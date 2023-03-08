@@ -134,10 +134,7 @@ const MapScreen = () => {
             value={text}
             placeholder="Set delivery address"
           />
-          <Image
-            style={MapScreenStyle.locPointer}
-            source={images.locationPointer}
-          />
+          <Image style={MapScreenStyle.locPointer} source={images.aimPointer} />
         </View>
       </View>
       <View style={MapScreenStyle.confirmBtn}>

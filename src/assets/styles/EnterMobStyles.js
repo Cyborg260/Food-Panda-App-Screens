@@ -27,6 +27,8 @@ export default StyleSheet.create({
     height: 70,
     marginHorizontal: 15,
     marginTop: 40,
+    resizeMode: 'contain',
+    tintColor: Colors.deeppink,
   },
   Txt: {
     fontSize: 28,

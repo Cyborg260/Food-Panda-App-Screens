@@ -1,9 +1,9 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Profile from '../screens/Profile';
-import MainScreen from '../screens/MainScreen';
 import CustomDrawer from '../components/CustomDrawer';
 import {Colors} from '../utils/colors';
+import MainScreen from '../screens/MainScreen/MainScreen';
+import Profile from '../screens/profile/Profile';
 
 const Drawer = createDrawerNavigator();
 const DrawerStack = () => {

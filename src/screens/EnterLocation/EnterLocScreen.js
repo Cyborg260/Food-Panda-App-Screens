@@ -9,11 +9,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Colors} from '../utils/colors';
-import EnterLocStyles from '../assets/styles/EnterLocStyles';
-import {images} from '../utils/Images';
-import BottomButton from '../components/BottomButton';
-import {ScreenNames} from '../navigations/AppStack';
+import {Colors} from '../../utils/colors';
+import styles from './EnterLocStyles';
+import {images} from '../../utils/Images';
+import BottomButton from '../../components/BottomButton';
+import {ScreenNames} from '../../navigations/AppStack';
 import {useNavigation} from '@react-navigation/native';
 
 const EnterLocScreen = () => {
@@ -23,43 +23,36 @@ const EnterLocScreen = () => {
   //==================== useEffect ========================//
   const navigation = useNavigation();
   const OpacityView = () => {
-    setShowOpacityView(!showOpacityView);
+    setShowOpacityView(true);
     setTimeout(() => {
+      setShowOpacityView(false);
       navigation.navigate(ScreenNames.MapScreen);
     }, 3000);
   };
-  console.log(showOpacityView, '============================opacity');
+  const navigateToHome = () => {
+    setModalVisible(false);
+    navigation.reset({
+      index: 0,
+      routes: [{name: ScreenNames.DrawerScreen}],
+    });
+  };
+
   return (
-    <SafeAreaView
-      style={[
-        EnterLocStyles.container,
-        {
-          opacity: showOpacityView ? 0.5 : 1,
-        },
-      ]}>
+    <SafeAreaView style={[styles.container]}>
       <StatusBar
         animated={true}
         backgroundColor={Colors.white}
         barStyle="dark-content"
       />
-      {showOpacityView ? (
-        <ActivityIndicator
-          style={EnterLocStyles.indicator}
-          size="large"
-          color={Colors.deeppink}
-        />
-      ) : (
-        <></>
-      )}
-      <Image style={EnterLocStyles.img} source={images.enterLocImg} />
-      <Text style={EnterLocStyles.mainTxt}>
+      <Image style={styles.img} source={images.enterLocImg} />
+      <Text style={styles.mainTxt}>
         Find restaurants and shops{'\n'}near you!
       </Text>
-      <Text style={EnterLocStyles.intructxt}>
+      <Text style={styles.intructxt}>
         By allowing location access, you can search for{'\n'}estaurants and
         shops near you and receive{'\n'}more accurate delivery.
       </Text>
-      <View style={EnterLocStyles.bottomView}>
+      <View style={styles.bottomView}>
         <BottomButton
           txt="Allow Location Access"
           backgroundColor={Colors.deeppink}
@@ -71,48 +64,67 @@ const EnterLocScreen = () => {
           txt="Enter my location"
           backgroundColor={Colors.white}
           txtColor={Colors.deeppink}
-          borderColor={Colors.white}
+          borderColor={Colors.deeppink}
           navigation={() => OpacityView()}
         />
         <Modal
-          animationType="slide"
+          animationType="fade"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
-            setModalVisible(!modalVisible);
+            setModalVisible(false);
           }}>
-          <View style={EnterLocStyles.centeredView}>
-            <View style={EnterLocStyles.modalView}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
               <Image
-                style={EnterLocStyles.pointerLocationImg}
+                style={styles.pointerLocationImg}
                 source={images.locationPointer}
               />
-              <Text style={EnterLocStyles.modalTxt}>
-                Allow <Text style={EnterLocStyles.modalFPtxt}>foodpanda </Text>
+              <Text style={styles.modalTxt}>
+                Allow <Text style={styles.modalFPtxt}>foodpanda </Text>
                 to access this device's{'\n'} location?
               </Text>
-              <View style={EnterLocStyles.lineView}></View>
+              <View style={styles.lineView}></View>
               <TouchableOpacity
                 activeOpacity={0.85}
-                onPress={() => navigation.navigate(ScreenNames.DrawerScreen)}>
-                <Text style={EnterLocStyles.txt}>While Using the app</Text>
+                onPress={() => navigateToHome()}>
+                <Text style={styles.txt}>While Using the app</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.85}
-                onPress={() => navigation.navigate(ScreenNames.DrawerScreen)}>
-                <Text style={EnterLocStyles.txt}>Only this time</Text>
+                onPress={() => navigateToHome()}>
+                <Text style={styles.txt}>Only this time</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.85}
                 onPress={() => {
                   setModalVisible(false);
                 }}>
-                <Text style={EnterLocStyles.txt}>Don't allow</Text>
+                <Text style={styles.txt}>Don't allow</Text>
               </TouchableOpacity>
             </View>
           </View>
         </Modal>
       </View>
+
+      {showOpacityView && (
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(255,255,255,0.35)',
+            // opacity:0.5,
+          }}>
+          <ActivityIndicator
+            style={styles.indicator}
+            size="large"
+            color={Colors.deeppink}
+          />
+        </View>
+      )}
     </SafeAreaView>
   );
 };

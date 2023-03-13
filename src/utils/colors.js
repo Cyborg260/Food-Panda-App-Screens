@@ -1,7 +1,8 @@
 export const Colors = {
   white: '#fff',
   black: '#000',
-  gainsboro: 'gainsboro',
+  gainsboro: 'rgba(247,247,247,1)',
+  disableButton: 'rgba(202,202,202,1)',
   deeppink: 'deeppink',
   foodPandaPink: '#d60665',
   grey: 'grey',

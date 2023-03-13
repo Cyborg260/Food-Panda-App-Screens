@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Image,
@@ -8,9 +7,10 @@ import {
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {images} from '../utils/Images';
+import {images} from '../../utils/Images';
+import {Colors} from '../../utils/colors';
 
-const DealsScreen = () => {
+const RestaurantsSceen = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -25,19 +25,18 @@ const DealsScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.indicator}>
-        <ActivityIndicator size="large" color="deeppink" />
+        <ActivityIndicator size="large" color={Colors.deeppink} />
       </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "yellow",
     marginHorizontal: 15,
     flex: 1,
   },
   img: {
-    tintColor: 'deeppink',
+    tintColor: Colors.deeppink,
     resizeMode: 'stretch',
     width: 32,
     height: 42,
@@ -49,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DealsScreen;
+export default RestaurantsSceen;

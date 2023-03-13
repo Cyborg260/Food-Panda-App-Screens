@@ -23,15 +23,12 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   mobImg: {
-    width: 75,
-    height: 75,
+    width: 70,
+    height: 70,
     marginHorizontal: 15,
     marginTop: 40,
-  },
-  insTxt: {
-    fontSize: 17,
-    marginHorizontal: 15,
-    marginTop: 10,
+    resizeMode: 'contain',
+    tintColor: Colors.deeppink,
   },
   Txt: {
     fontSize: 28,
@@ -40,23 +37,42 @@ export default StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 20,
   },
-  mobNoTxt: {
+  insTxt: {
     fontSize: 17,
     marginHorizontal: 15,
-    fontWeight: 'bold',
-    color: Colors.black,
+    marginTop: 10,
   },
-  sendCodeOpacity: {
-    width: 160,
-    height: 50,
-    borderRadius: 10,
+  bothView: {
+    flexDirection: 'row',
     marginHorizontal: 15,
+    marginTop: 30,
+  },
+  domainView: {
+    width: 70,
+    height: 50,
+    borderWidth: 1,
+    borderColor: Colors.gainsboro,
+    padding: 4,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
   },
-  sendCodeTxt: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.white,
+  textInputView: {
+    width: 300,
+    height: 50,
+    borderWidth: 1,
+    borderColor: Colors.gainsboro,
+    marginHorizontal: 20,
+    borderRadius: 10,
+  },
+  inputStyle: {
+    paddingLeft: 18,
+  },
+  BottomTxt: {
+    marginTop: 240,
+    height: 90,
+    borderTopWidth: 1,
+    elevation: 0.5,
+    borderColor: Colors.gainsboro,
   },
 });

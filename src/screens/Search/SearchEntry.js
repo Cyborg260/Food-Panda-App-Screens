@@ -11,13 +11,13 @@ import {
   StatusBar,
 } from 'react-native';
 // Import Screens //
-import FirstRoute from './Restaurants';
-import SecondRoute from './Shops';
+import FirstRoute from '../Restaurant/Restaurants';
+import SecondRoute from '../Shops/Shops';
 //import packages//
 import {useNavigation} from '@react-navigation/native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
-import {images} from '../utils/Images';
-import {Colors} from '../utils/colors';
+import {images} from '../../utils/Images';
+import {Colors} from '../../utils/colors';
 
 const SearchEntry = () => {
   const navigation = useNavigation();
@@ -246,6 +246,6 @@ const styles = StyleSheet.create({
     tintColor: Colors.deeppink,
     resizeMode: 'stretch',
     width: 30,
-    height: 45,
+    height: 40,
   },
 });

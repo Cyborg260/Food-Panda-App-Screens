@@ -1,12 +1,12 @@
 import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import styles from '../assets/styles/RestCateStyles';
-import {PizzaData} from '../utils/Data/RestaurantData/PizzaData';
-import {CakesData} from '../utils/Data/RestaurantData/CakesData';
-import {ScreenNames} from '../navigations/AppStack';
-import {images} from '../utils/Images';
-import {Colors} from '../utils/colors';
+import styles from './HomeStyles';
+import {PizzaData} from '../../utils/Data/RestaurantData/PizzaData';
+import {CakesData} from '../../utils/Data/RestaurantData/CakesData';
+import {ScreenNames} from '../../navigations/AppStack';
+import {images} from '../../utils/Images';
+import {Colors} from '../../utils/colors';
 const Home = ({...props}) => {
   const navigation = useNavigation();
   console.log(props?.route?.params?.product.title, '================product');

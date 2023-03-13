@@ -19,11 +19,11 @@ import {ScreenNames} from '../navigations/AppStack';
 const ItemsScreen = () => {
   const navigation = useNavigation();
   const renderItem = ({item}) => {
-    console.log(item, '=================item');
+    // console.log(item, '=================item');
     return (
       <TouchableOpacity
         style={ItemScreenStyles.container}
-        activeOpacity={0.65}
+        activeOpacity={0.85}
         onPress={() => navigation.navigate(ScreenNames.Home, {product: item})}>
         <View style={ItemScreenStyles.imgView}>
           <Image style={ItemScreenStyles.img} source={item.image} />
@@ -278,7 +278,7 @@ const ItemsScreen = () => {
                 resizeMode: 'contain',
                 borderRadius: 10,
               }}
-              source={images.fp6}
+              source={images.pizzapoint}
             />
           </View>
           <View
@@ -564,7 +564,7 @@ const ItemsScreen = () => {
 
   const renderEightView = () => {
     return (
-      <TouchableOpacity activeOpacity={0.5}>
+      <TouchableOpacity activeOpacity={0.85}>
         {/* //FoodPanda Logo// */}
         <View
           style={{
@@ -572,7 +572,7 @@ const ItemsScreen = () => {
             marginVertical: 40,
             marginBottom: 20,
             borderRadius: 10,
-            borderWidth: 1,
+            borderWidth: 2,
             borderColor: Colors.lightGrey,
             width: '95%',
             height: 75,
@@ -580,15 +580,6 @@ const ItemsScreen = () => {
             marginHorizontal: 10,
             alignItems: 'center',
             padding: 10,
-            shadowColor: Colors.black,
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-
-            elevation: 1,
           }}>
           <View>
             <Text

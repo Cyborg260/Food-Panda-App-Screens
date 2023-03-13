@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import MapScreenStyle from '../assets/styles/MapScreenStyle';
-import {Colors} from '../utils/colors';
+import styles from '../../screens/Map/MapScreenStyle';
+import {Colors} from '../../utils/colors';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
-import BottomButton from '../components/BottomButton';
-import {images} from '../utils/Images';
+import BottomButton from '../../components/BottomButton';
+import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
-import {ScreenNames} from '../navigations/AppStack';
+import {ScreenNames} from '../../navigations/AppStack';
 
 const MapScreen = () => {
   //================== useState ===================//
@@ -88,17 +88,17 @@ const MapScreen = () => {
     }
   };
   return (
-    <SafeAreaView style={MapScreenStyle.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         animated={true}
         backgroundColor={Colors.white}
         barStyle="dark-content"
       />
 
-      <View style={MapScreenStyle.mapViewContainer}>
+      <View style={styles.mapViewContainer}>
         <MapView
           provider={PROVIDER_GOOGLE}
-          style={MapScreenStyle.map}
+          style={styles.map}
           initialRegion={{
             latitude: 24.9125026,
             longitude: 67.0307375,
@@ -121,23 +121,24 @@ const MapScreen = () => {
           />
         </MapView>
       </View>
-      <View style={MapScreenStyle.topView}>
+
+      <View style={styles.topView}>
         <TouchableOpacity
           activeOpacity={0.85}
           onPress={() => navigation.goBack()}>
-          <Image style={MapScreenStyle.leftImg} source={images.lefticon} />
+          <Image style={styles.leftImg} source={images.lefticon} />
         </TouchableOpacity>
-        <View style={MapScreenStyle.inputStyleView}>
+        <View style={styles.inputStyleView}>
           <TextInput
-            style={MapScreenStyle.inputStyle}
+            style={styles.inputStyle}
             onChangeText={setText}
             value={text}
             placeholder="Set delivery address"
           />
-          <Image style={MapScreenStyle.locPointer} source={images.aimPointer} />
+          <Image style={styles.locPointer} source={images.aimPointer} />
         </View>
       </View>
-      <View style={MapScreenStyle.confirmBtn}>
+      <View style={styles.confirmBtn}>
         <BottomButton
           txt="Confirm"
           backgroundColor={Colors.deeppink}

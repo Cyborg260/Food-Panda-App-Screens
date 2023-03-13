@@ -23,12 +23,17 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   mobImg: {
-    width: 70,
-    height: 70,
+    width: 75,
+    height: 75,
     marginHorizontal: 15,
     marginTop: 40,
     resizeMode: 'contain',
     tintColor: Colors.deeppink,
+  },
+  insTxt: {
+    fontSize: 17,
+    marginHorizontal: 15,
+    marginTop: 10,
   },
   Txt: {
     fontSize: 28,
@@ -37,41 +42,47 @@ export default StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 20,
   },
-  insTxt: {
+  mobNoTxt: {
     fontSize: 17,
     marginHorizontal: 15,
-    marginTop: 10,
+    fontWeight: 'bold',
+    color: Colors.black,
   },
-  bothView: {
-    flexDirection: 'row',
-    marginHorizontal: 15,
-    marginTop: 30,
-  },
-  domainView: {
-    width: 70,
+  sendCodeOpacity: {
+    width: 160,
     height: 50,
-    borderWidth: 1,
-    borderColor: Colors.gainsboro,
-    padding: 4,
+    borderRadius: 10,
+    marginHorizontal: 15,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  sendCodeTxt: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.white,
+  },
+  otpStyles: {
+    marginVertical: 25,
     flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 15,
   },
-  textInputView: {
-    width: 300,
-    height: 50,
+  inputContainerStyles: {
+    borderRadius: 8,
+    backgroundColor: Colors.white,
     borderWidth: 1,
-    borderColor: Colors.gainsboro,
-    marginHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 65,
+    height: 65,
+    marginHorizontal: 5,
+  },
+  inputStyles: {
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '700',
     borderRadius: 10,
-  },
-  inputStyle: {
-    paddingLeft: 18,
-  },
-  BottomTxt: {
-    marginTop: 270,
-    height: 90,
-    borderTopWidth: 1,
-    borderColor: Colors.gainsboro,
+    color: 'black',
   },
 });

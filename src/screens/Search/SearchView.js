@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {animateHeaderHeight} from '../utils/Constant';
-import {ScreenNames} from '../navigations/AppStack';
-import {images} from '../utils/Images';
+import {animateHeaderHeight} from '../../utils/Constant';
+import {ScreenNames} from '../../navigations/AppStack';
+import {images} from '../../utils/Images';
 const SearchView = () => {
   const navigation = useNavigation();
   console.log(animateHeaderHeight, 'hello');
@@ -20,7 +20,7 @@ const SearchView = () => {
         <TouchableOpacity
           style={styles.touchableOpacity}
           activeOpacity={1}
-          onPress={() => navigation.navigate(ScreenNames.SearchScreen)}>
+          onPress={() => navigation.navigate(ScreenNames.SearchEntryScreen)}>
           <View style={styles.insideView}>
             <Image style={styles.searchIcon} source={images.searchIcon} />
             <Text style={styles.txt}>Search for shops and restaurants</Text>

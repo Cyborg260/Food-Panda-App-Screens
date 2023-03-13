@@ -8,19 +8,18 @@ import {
   Alert,
 } from 'react-native';
 import React, {useState} from 'react';
-import styles from '../assets/styles/CartScreenStyles';
-import {images} from '../utils/Images';
+import styles from '../ViewYourCart/ViewCartStyles';
+import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
-import {addtocart} from '../redux/action';
-import ModalView from '../components/modalView';
-import {Colors} from '../utils/colors';
+import {addtocart} from '../../redux/action';
+import ModalView from '../../components/modalView';
+import {Colors} from '../../utils/colors';
 
 const ViewCart = ({...props}) => {
   //====================== useStae ==========================//
   const [showView, setShowView] = useState(false);
   const navigation = useNavigation();
-
   const dispatch = useDispatch();
   const totalAmount = useSelector(state => state.price);
   const data = useSelector(state => state.quantity);

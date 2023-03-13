@@ -1,7 +1,7 @@
 import {View, Text, Button} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import MainScreen from './MainScreen';
+import MainScreen from '../MainScreen/MainScreen';
 
 const Profile = () => {
   const navigation = useNavigation();

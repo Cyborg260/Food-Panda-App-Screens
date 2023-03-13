@@ -7,17 +7,17 @@ import {
 } from '@react-navigation/stack';
 // import screens //
 import DrawerStack from './DrawerStack';
-import DealsScreen from '../screens/DealsScreen';
-import SearchEntry from '../screens/SearchEntry';
-import RestaurantsSceen from '../screens/RestaurantsSceen';
-import SelectedRest from '../screens/SelectedRestaurant';
-import ViewCart from '../screens/ViewCart';
-import Home from '../screens/Home';
-import SplashScreen from '../screens/SplashScreen';
-import EnterLocScreen from '../screens/EnterLocScreen';
-import MapScreen from '../screens/MapScreen';
-import EnterMobileNo from '../screens/EnterMobileNo';
-import VerifyMobScreen from '../screens/VerifyMobScreen';
+import SearchEntry from '../screens/Search/SearchEntry';
+import SelectedRest from '../screens/SelectedRestaurants/SelectedRestaurant';
+import EnterLocScreen from '../screens/EnterLocation/EnterLocScreen';
+import MapScreen from '../screens/Map/MapScreen';
+import ViewCart from '../screens/ViewYourCart/ViewCart';
+import Home from '../screens/Home/Home';
+import EnterMobileNo from '../screens/EnterYourMobNo/EnterMobileNo';
+import VerifyMobScreen from '../screens/VerifyYourMobNo/VerifyMobScreen';
+import SplashScreen from '../screens/SplashScreen/SplashScreen';
+import DealsScreen from '../screens/Deals/DealsScreen';
+import RestaurantsSceen from '../screens/Restaurant/RestaurantsSceen';
 
 const Stack = createStackNavigator();
 export const ScreenNames = {
@@ -25,7 +25,7 @@ export const ScreenNames = {
   EnterLocation: 'EnterLocation',
   MapScreen: 'MapScreen',
   DrawerScreen: 'DrawerStack',
-  SearchScreen: 'Search',
+  SearchEntryScreen: 'SearchEntry',
   DealScreen: 'Deals',
   RestauScreen: 'Restaurants',
   SelectedRest: 'SelectedRestaurant',
@@ -101,7 +101,7 @@ const StackScreens = () => {
         component={DrawerStack}
         options={options}
       />
-      <Stack.Screen name="Search" component={SearchEntry} options={options} />
+      <Stack.Screen name="SearchEntry" component={SearchEntry} options={options} />
       <Stack.Screen name="Deals" component={DealsScreen} options={options} />
       <Stack.Screen
         name="Restaurants"

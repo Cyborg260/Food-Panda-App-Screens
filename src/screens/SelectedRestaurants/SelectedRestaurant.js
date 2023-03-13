@@ -5,21 +5,20 @@ import {
   FlatList,
   Image,
   StatusBar,
-  ScrollView,
   SafeAreaView,
   Alert,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
-import styles from '../assets/styles/styles';
+import styles from './selectedRestStyles';
 import {useNavigation} from '@react-navigation/native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import {useDispatch, useSelector} from 'react-redux';
-import {addtocart} from '../redux/action';
-import {images} from '../utils/Images';
-import {Colors} from '../utils/colors';
-import {ScreenNames} from '../navigations/AppStack';
+import {addtocart} from '../../redux/action';
+import {images} from '../../utils/Images';
+import {Colors} from '../../utils/colors';
+import {ScreenNames} from '../../navigations/AppStack';
 
-const SelectedCateg = ({route}) => {
+const SelectedRestaurant = ({route}) => {
   //======================= useState ==============================//
   const [menus, setMenus] = useState([]);
   //========================= useEffect =============================//
@@ -104,7 +103,7 @@ const SelectedCateg = ({route}) => {
         </View>
         <View style={styles.detailTxtView}>
           <Text style={styles.detailTxt}>{product.detail}</Text>
-        </View>       
+        </View>
         <View style={styles.lineView}></View>
         <Text style={styles.specialHeadingTxt}>Special instructions</Text>
         <View style={styles.specialTxtView}>
@@ -196,4 +195,4 @@ const SelectedCateg = ({route}) => {
     </SafeAreaView>
   );
 };
-export default SelectedCateg;
+export default SelectedRestaurant;

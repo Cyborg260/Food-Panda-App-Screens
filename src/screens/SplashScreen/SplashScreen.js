@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View, StatusBar, Image} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Colors} from '../utils/colors';
-import {ScreenNames} from '../navigations/AppStack';
+import {Colors} from '../../utils/colors';
+import {ScreenNames} from '../../navigations/AppStack';
 import {useNavigation} from '@react-navigation/native';
-import {images} from '../utils/Images';
+import {images} from '../../utils/Images';
 
 const SplashScreen = () => {
   //=================== useState =======================//
@@ -30,9 +30,13 @@ const SplashScreen = () => {
         backgroundColor={Colors.deeppink}
         barStyle="light-content"
       />
-      <Text style={[styles.txt, {fontSize: showPic ? 16 : 24}]}>
-        Food Panda
-      </Text>
+      <Image
+        style={[
+          styles.img,
+          {width: showPic ? 350 : 450, height: showPic ? 150 : 200},
+        ]}
+        source={images.foodPandaNameImg}
+      />
       {showPic ? <Image style={styles.panda} source={images.panda} /> : <></>}
     </View>
   );
@@ -43,19 +47,18 @@ export default SplashScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.deeppink,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  txt: {
-    fontWeight: 'bold',
-    color: Colors.white,
+  img: {
+    resizeMode: 'contain',
   },
   panda: {
     position: 'absolute',
     resizeMode: 'contain',
-    height: 250,
-    width: 250,
-    bottom: -10,
+    height: 200,
+    width: 200,
+    bottom: 10,
   },
 });

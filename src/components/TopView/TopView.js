@@ -6,11 +6,15 @@ import styles from '../../components/TopView/TopViewStyles';
 
 const TopView = () => {
   const navigation = useNavigation();
+
+  console.log("ASdasdasdasdasdasdasdasd==",navigation);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
         activeOpacity={0.85}
-        onPress={() => navigation.openDrawer()}>
+        onPress={() => navigation.openDrawer()}
+        >
         <Image style={styles.drawerImg} source={images.menuIcon} />
       </TouchableOpacity>
       <View style={styles.txtsView}>

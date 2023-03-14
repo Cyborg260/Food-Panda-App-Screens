@@ -50,7 +50,8 @@ const ViewCart = ({...props}) => {
         </TouchableOpacity>
         <View style={styles.topTxtView}>
           <Text style={styles.cartTxt}>Cart</Text>
-          <Text style={styles.locationTxt}>{location.detail}</Text>
+          <Text style={styles.locationTxt}>{location}</Text>
+          {/* //yahan pe above text me location.detail likha the due to error remove kia hai// */}
         </View>
       </View>
       <View style={styles.deliveryView}>

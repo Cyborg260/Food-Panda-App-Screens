@@ -18,6 +18,7 @@ import VerifyMobScreen from '../screens/VerifyYourMobNo/VerifyMobScreen';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import DealsScreen from '../screens/Deals/DealsScreen';
 import RestaurantsSceen from '../screens/Restaurant/RestaurantsSceen';
+import FavouritesScreen from '../screens/Favourites/FavouritesScreen';
 
 const Stack = createStackNavigator();
 export const ScreenNames = {
@@ -33,6 +34,7 @@ export const ScreenNames = {
   Home: 'Home',
   EnterMobileNo: 'EnterMobileNo',
   VerfifyMobNo: 'VerifyMob',
+  Favourites: 'Favourites',
 };
 const config = {
   animation: 'spring',
@@ -101,7 +103,11 @@ const StackScreens = () => {
         component={DrawerStack}
         options={options}
       />
-      <Stack.Screen name="SearchEntry" component={SearchEntry} options={options} />
+      <Stack.Screen
+        name="SearchEntry"
+        component={SearchEntry}
+        options={options}
+      />
       <Stack.Screen name="Deals" component={DealsScreen} options={options} />
       <Stack.Screen
         name="Restaurants"
@@ -115,6 +121,11 @@ const StackScreens = () => {
       />
       <Stack.Screen name="CartScreen" component={ViewCart} options={options} />
       <Stack.Screen name="Home" component={Home} options={options} />
+      <Stack.Screen
+        name="Favourites"
+        component={FavouritesScreen}
+        options={options}
+      />
     </Stack.Navigator>
   );
 };

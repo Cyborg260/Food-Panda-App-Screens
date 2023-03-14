@@ -7,18 +7,19 @@ import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNames} from '../../navigations/AppStack';
 
-const logInRBSheet = () => {
+const logInRBSheet = ({ref}) => {
   //===================== useEffect =======================//
-  useEffect(() => {
-    setTimeout(() => {
-      refSheet.current.open();
-    }, 2000);
-  }, []);
-  const refSheet = useRef();
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     refSheet.current.open();
+  //   }, 2000);
+  // }, []);
+  // const ref = useRef();
+  console.log(ref, '============== rbsheet ref');
   const navigation = useNavigation();
   return (
     <RBSheet
-      ref={refSheet}
+      ref={ref}
       closeOnDragDown={true}
       closeOnPressMask={true}
       height={340}

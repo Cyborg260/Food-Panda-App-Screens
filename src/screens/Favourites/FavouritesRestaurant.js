@@ -9,10 +9,14 @@ import {
 import React, {useState} from 'react';
 import {Colors} from '../../utils/colors';
 import {images} from '../../utils/Images';
+import {useNavigation} from '@react-navigation/native';
+import {ScreenNames} from '../../navigations/AppStack';
 
 const FavouritesRestaurant = () => {
+  //=============== useState ================//
   const [pressDelivery, setPressDelivery] = useState(false);
   const [pressPickUp, setPressPickup] = useState(false);
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.bothBtnView}>
@@ -62,7 +66,10 @@ const FavouritesRestaurant = () => {
           To make ordering even faster, you'll find your{'\n'}faves here. Just
           look for the heart icon
         </Text>
-        <TouchableOpacity activeOpacity={0.85} style={styles.bottomOpacity}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(ScreenNames.SearchEntryScreen)}
+          activeOpacity={0.85}
+          style={styles.bottomOpacity}>
           <Text style={styles.opacityTxt}>Let's find some favourites</Text>
         </TouchableOpacity>
       </View>

@@ -27,7 +27,17 @@ const CustomDrawer = ({...props}) => {
       style={styles.renderItemContainer}
       onPress={() => {
         navigation.navigate(
-          item.id === 1 ? ScreenNames.Favourites : ScreenNames.Home,
+          item.id === 1
+            ? ScreenNames.Favourites
+            : item.id === 2
+            ? ScreenNames.OrderReordering
+            : item.id === 4
+            ? ScreenNames.AddressScreen
+            : item.id === 6
+            ? ScreenNames.VoucherOffers
+            : item.id === 7
+            ? ScreenNames.HelpCenter
+            : ScreenNames.Home,
         );
       }}>
       <Image
@@ -59,7 +69,7 @@ const CustomDrawer = ({...props}) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View
+      <TouchableOpacity
         style={{
           height: 80,
           marginLeft: 15,
@@ -67,7 +77,9 @@ const CustomDrawer = ({...props}) => {
           borderBottomColor: Colors.gainsboro,
           justifyContent: 'center',
           marginBottom: 10,
-        }}>
+        }}
+        activeOpacity={0.85}
+        onPress={() => navigation.navigate(ScreenNames.PandaPayScreen)}>
         <View
           style={{
             flexDirection: 'row',
@@ -126,7 +138,7 @@ const CustomDrawer = ({...props}) => {
           }}>
           Credit and payment methods
         </Text>
-      </View>
+      </TouchableOpacity>
       <FlatList scrollEnabled={true} data={userData} renderItem={renderItem} />
       <View
         style={{

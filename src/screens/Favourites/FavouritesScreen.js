@@ -50,11 +50,8 @@ const FavouritesScreen = () => {
             <Image style={styles.img} source={images.lefticon} />
           </TouchableOpacity>
         </View>
-            <Text style={styles.headerTxt}>Favourites</Text>
-            <Image
-              style={styles.favouritesIcon}
-              source={images.shoppingBagIcon}
-            />
+        <Text style={styles.headerTxt}>Favourites</Text>
+        <Image style={styles.favouritesIcon} source={images.favouriteIcon} />
       </View>
       <TabView
         navigationState={{index, routes}}

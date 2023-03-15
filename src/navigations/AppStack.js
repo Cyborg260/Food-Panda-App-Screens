@@ -19,6 +19,12 @@ import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import DealsScreen from '../screens/Deals/DealsScreen';
 import RestaurantsSceen from '../screens/Restaurant/RestaurantsSceen';
 import FavouritesScreen from '../screens/Favourites/FavouritesScreen';
+import OrdersReorderingScreens from '../screens/Orders&Reordering/Orders&ReorderingScreens';
+import AddressScreen from '../screens/Address/AddressScreen';
+import PandaPayScreen from '../screens/PandaPay/PandaPayScreen';
+import VouchersOfferScreen from '../screens/Vouchers/VouchersOfferScreen';
+import VouchersHistory from '../screens/Vouchers/VouchersHistory';
+import HelpCenterScreen from '../screens/HelpCenter/HelpCenterScreen';
 
 const Stack = createStackNavigator();
 export const ScreenNames = {
@@ -35,6 +41,12 @@ export const ScreenNames = {
   EnterMobileNo: 'EnterMobileNo',
   VerfifyMobNo: 'VerifyMob',
   Favourites: 'Favourites',
+  OrderReordering: 'Orders&ReOrder',
+  AddressScreen: 'AddressScreen',
+  PandaPayScreen: 'PandaPayScreen',
+  VoucherOffers: 'Voucher&Offers',
+  VoucherHistory: 'VoucherHistory',
+  HelpCenter: 'HelpCenterScreen',
 };
 const config = {
   animation: 'spring',
@@ -124,6 +136,36 @@ const StackScreens = () => {
       <Stack.Screen
         name="Favourites"
         component={FavouritesScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="Orders&ReOrder"
+        component={OrdersReorderingScreens}
+        options={options}
+      />
+      <Stack.Screen
+        name="AddressScreen"
+        component={AddressScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="PandaPayScreen"
+        component={PandaPayScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="Voucher&Offers"
+        component={VouchersOfferScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="VoucherHistory"
+        component={VouchersHistory}
+        options={options}
+      />
+      <Stack.Screen
+        name="HelpCenterScreen"
+        component={HelpCenterScreen}
         options={options}
       />
     </Stack.Navigator>

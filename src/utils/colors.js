@@ -12,4 +12,5 @@ export const Colors = {
   aqua: '#49c086',
   seaGreen: '#91baa9',
   green: '#00FF00',
+  babyPink: '#ffeaf9',
 };

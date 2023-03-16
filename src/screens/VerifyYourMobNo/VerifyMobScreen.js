@@ -17,6 +17,19 @@ const VerifyMobScreen = ({...props}) => {
   //================= useState ======================//
   const [focused, setFocused] = useState();
   const [OTP, setOTP] = useState('');
+  const [seconds, setSeconds] = useState(0);
+  //================= useEffect =================//
+  useEffect(() => {
+    setTimeout(() => {
+      if (seconds <= 9) {
+        setSeconds(seconds + 1);
+      }
+      //  else if (seconds === 10) {
+      //   setSeconds(0);
+      // }
+    }, 1000);
+  }, [seconds]);
+
   const otpRef = useRef(null);
   const mobileNumber = props?.route?.params?.text;
   const navigation = useNavigation();
@@ -67,27 +80,30 @@ const VerifyMobScreen = ({...props}) => {
         />
       </View>
       <TouchableOpacity
-        // onPress={() =>
-        //   navigation.reset({
-        //     index: 0,
-        //     routes: [{name: ScreenNames.DrawerScreen}],
-        //   })
-        // }
+        onPress={() => {
+          seconds === 10 ? setSeconds(!seconds) : NULL;
+        }}
         style={[
           styles.sendCodeOpacity,
           {
-            backgroundColor: OTP === 0 ? Colors.deeppink : Colors.gainsboro,
+            backgroundColor:
+              seconds === 10 ? Colors.deeppink : Colors.gainsboro,
           },
         ]}
         activeOpacity={0.85}>
         <Text style={[styles.sendCodeTxt, {}]}>Send code again</Text>
       </TouchableOpacity>
-      <Text style={{marginHorizontal: 15}}>
-        Try again in{' '}
-        <Text style={{color: Colors.black, fontWeight: 'bold'}}>
-          10 seconds
+
+      {seconds === 10 ? (
+        <></>
+      ) : (
+        <Text style={{marginHorizontal: 15}}>
+          Try again in{' '}
+          <Text style={{color: Colors.black, fontWeight: 'bold'}}>
+            {seconds} seconds
+          </Text>
         </Text>
-      </Text>
+      )}
     </SafeAreaView>
   );
 };

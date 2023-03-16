@@ -32,7 +32,7 @@ const MainScreen = () => {
         )}>
         <ItemsScreen />
       </ScrollView>
-      <LogInRBSheet ref={refSheet} />
+      <LogInRBSheet />
     </SafeAreaView>
   );
 };

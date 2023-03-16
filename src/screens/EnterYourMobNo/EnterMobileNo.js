@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, SafeAreaView, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {images} from '../../utils/Images';
 import styles from '../../screens/EnterYourMobNo/EnterMobStyles';
@@ -21,7 +15,11 @@ const EnterMobileNo = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topView}>
-        <Image style={styles.crossImg} source={images.crossIcon} />
+        <TouchableOpacity
+          activeOpacity={0.85}
+          onPress={() => navigation.goBack()}>
+          <Image style={styles.crossImg} source={images.crossIcon} />
+        </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.85}
           onPress={() =>

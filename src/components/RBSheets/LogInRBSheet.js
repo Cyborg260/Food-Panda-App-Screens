@@ -7,14 +7,14 @@ import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNames} from '../../navigations/AppStack';
 
-const logInRBSheet = ({ref}) => {
+const logInRBSheet = () => {
   //===================== useEffect =======================//
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     refSheet.current.open();
-  //   }, 2000);
-  // }, []);
-  // const ref = useRef();
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current.open();
+    }, 2000);
+  }, []);
+  const ref = useRef();
   console.log(ref, '============== rbsheet ref');
   const navigation = useNavigation();
   return (
@@ -72,7 +72,7 @@ const logInRBSheet = ({ref}) => {
         backgroundColor={Colors.white}
         navigation={() => {
           navigation.navigate(ScreenNames.EnterMobileNo),
-            refSheet.current.close();
+            ref.current.close();
         }}
         isShadow={true}
       />

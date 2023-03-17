@@ -5,6 +5,8 @@ import {
   Image,
   ScrollView,
   FlatList,
+  Modal,
+  BackHandler,
 } from 'react-native';
 import React, {useState, useRef} from 'react';
 import {Colors} from '../../utils/colors';
@@ -17,6 +19,7 @@ import {ScreenNames} from '../../navigations/AppStack';
 const CustomDrawer = ({...props}) => {
   //================== useState ===================//
   const [switchDrawer, setSwitchDrawer] = useState(false);
+  const [logOutModalView, setLogoutModalView] = useState(false);
   const navigation = useNavigation();
   const refSheet = useRef();
   console.log('ASdasasdasdasdasdsa', props.navigation);
@@ -37,6 +40,8 @@ const CustomDrawer = ({...props}) => {
             ? ScreenNames.VoucherOffers
             : item.id === 7
             ? ScreenNames.HelpCenter
+            : item.id === 8
+            ? ScreenNames.FpForBussiness
             : ScreenNames.Home,
         );
       }}>
@@ -70,92 +75,66 @@ const CustomDrawer = ({...props}) => {
         </View>
       </View>
       <TouchableOpacity
-        style={{
-          height: 80,
-          marginLeft: 15,
-          borderBottomWidth: 1,
-          borderBottomColor: Colors.gainsboro,
-          justifyContent: 'center',
-          marginBottom: 10,
-        }}
+        style={styles.pandaPayOpacity}
         activeOpacity={0.85}
         onPress={() => navigation.navigate(ScreenNames.PandaPayScreen)}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginVertical: '3%',
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-            }}>
-            <Text
-              style={{
-                fontSize: 13,
-                color: Colors.deeppink,
-              }}>
-              panda
-            </Text>
-            <Text
-              style={{
-                fontSize: 13,
-                color: Colors.white,
-                fontStyle: 'italic',
-                backgroundColor: Colors.deeppink,
-                width: 25,
-                textAlign: 'center',
-              }}>
-              pay
-            </Text>
+        <View style={styles.pandaPayTxtView}>
+          <View style={styles.pandapayNestedTxtView}>
+            <Text style={styles.pandaTxt}>panda</Text>
+            <Text style={styles.payTxt}>pay</Text>
           </View>
           <TouchableOpacity
-            style={{
-              backgroundColor: Colors.gainsboro,
-              borderColor: Colors.gainsboro,
-              borderRadius: 10,
-              borderWidth: 1,
-              width: 'auto',
-              height: 'auto',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: 20,
-            }}
+            style={styles.amountOpacityView}
             activeOpacity={0.5}>
-            <Text
-              style={{
-                fontSize: 10,
-                color: Colors.deeppink,
-              }}>
-              Rs. 0.00
-            </Text>
+            <Text style={styles.amountTxt}>Rs. 0.00</Text>
           </TouchableOpacity>
         </View>
-        <Text
-          style={{
-            fontSize: 14,
-            color: Colors.black,
-          }}>
-          Credit and payment methods
-        </Text>
+        <Text style={styles.txt}>Credit and payment methods</Text>
       </TouchableOpacity>
       <FlatList scrollEnabled={true} data={userData} renderItem={renderItem} />
-      <View
-        style={{
-          borderColor: Colors.gainsboro,
-          borderBottomWidth: 1,
-          marginRight: 10,
-        }}
-      />
+      <View style={styles.lineView} />
       <TouchableOpacity style={styles.settingsView} activeOpacity={0.5}>
         <Text style={styles.settingsTxt}>Settings</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.termsPrivacyView} activeOpacity={0.5}>
         <Text style={styles.termsPrivacytxt}>Terms & Conditions / privacy</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.logoutView} activeOpacity={0.5}>
-        <Text style={styles.logOutTxt}>Log out</Text>
+      <TouchableOpacity
+        style={styles.logoutView}
+        activeOpacity={0.5}
+        onPress={() => setLogoutModalView(true)}>
+        <Text style={styles.logOutDrawerTxt}>Log out</Text>
       </TouchableOpacity>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={logOutModalView}
+        onRequestClose={() => {
+          setLogoutModalView(false);
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.loggingOutTxt}>Logging out?</Text>
+            <Text style={styles.thanksTxt}>
+              Thanks for stopping by see you{'\n'}soon!
+            </Text>
+            <View style={styles.bothButtonView}>
+              <TouchableOpacity
+                style={styles.cancelBtnOpacity}
+                activeOpacity={0.85}
+                onPress={() => setLogoutModalView(false)}>
+                <Text style={styles.cancelTxt}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.logOutOpacity}
+                activeOpacity={0.85}
+                onPress={() => BackHandler.exitApp()}>
+                <Text style={styles.logOutTxt}>Log out</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };

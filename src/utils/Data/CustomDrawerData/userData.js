@@ -44,6 +44,6 @@ export const userData = [
   {
     id: 8,
     image: images.bussinessLogo,
-    txt: 'Foddpanda for bussiness',
+    txt: 'Foodpanda for bussiness',
   },
 ];

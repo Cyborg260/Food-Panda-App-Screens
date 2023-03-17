@@ -71,8 +71,7 @@ const logInRBSheet = () => {
         borderColor={Colors.deeppink}
         backgroundColor={Colors.white}
         navigation={() => {
-          navigation.navigate(ScreenNames.EnterMobileNo),
-            ref.current.close();
+          navigation.navigate(ScreenNames.EnterMobileNo), ref.current.close();
         }}
         isShadow={true}
       />

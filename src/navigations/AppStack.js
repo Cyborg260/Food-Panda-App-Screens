@@ -25,6 +25,7 @@ import PandaPayScreen from '../screens/PandaPay/PandaPayScreen';
 import VouchersOfferScreen from '../screens/Vouchers/VouchersOfferScreen';
 import VouchersHistory from '../screens/Vouchers/VouchersHistory';
 import HelpCenterScreen from '../screens/HelpCenter/HelpCenterScreen';
+import FpBussinesssScreen from '../screens/FoodpandaBussiness/FpBussinessScreen';
 
 const Stack = createStackNavigator();
 export const ScreenNames = {
@@ -47,6 +48,7 @@ export const ScreenNames = {
   VoucherOffers: 'Voucher&Offers',
   VoucherHistory: 'VoucherHistory',
   HelpCenter: 'HelpCenterScreen',
+  FpForBussiness: 'FpForBussiness',
 };
 const config = {
   animation: 'spring',
@@ -166,6 +168,11 @@ const StackScreens = () => {
       <Stack.Screen
         name="HelpCenterScreen"
         component={HelpCenterScreen}
+        options={options}
+      />
+      <Stack.Screen
+        name="FpForBussiness"
+        component={FpBussinesssScreen}
         options={options}
       />
     </Stack.Navigator>

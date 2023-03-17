@@ -8,6 +8,7 @@ export const Colors = {
   grey: 'grey',
   lightGrey: 'lightgrey',
   lavender: 'lavender',
+  dimGrey: '#f2f2f2',
   blue: '#1878f3',
   aqua: '#49c086',
   seaGreen: '#91baa9',

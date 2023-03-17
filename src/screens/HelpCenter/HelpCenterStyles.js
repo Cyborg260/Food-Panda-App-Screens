@@ -32,7 +32,7 @@ export default StyleSheet.create({
   },
   maintxt: {
     color: Colors.deeppink,
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: 'bold',
     marginTop: 10,
     marginHorizontal: 20,

@@ -7,7 +7,7 @@ import LoginRBSheet from '../../components/RBSheets/LogInRBSheet';
 const LoginDrawer = ({drawerNav}) => {
   const navigation = useNavigation();
   const refSheet = useRef();
-  console.log(refSheet, '===========refSheet');
+  console.log(drawerNav, '===========refSheet');
   const renderItem = ({item}) => (
     <TouchableOpacity activeOpacity={0.85} style={styles.renderItemContainer}>
       <Image style={[styles.renderItemImg]} source={item.image} />
@@ -20,7 +20,8 @@ const LoginDrawer = ({drawerNav}) => {
         <TouchableOpacity
           activeOpacity={0.85}
           onPress={() => {
-            drawerNav.closeDrawer(), refSheet.current.open();
+            drawerNav.closeDrawer();
+            //  refSheet.current.open();
           }}>
           <Text style={styles.profileViewTxt}>Log in / Create account</Text>
         </TouchableOpacity>

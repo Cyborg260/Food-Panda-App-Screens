@@ -36,7 +36,7 @@ const LoginDrawer = ({drawerNav}) => {
       <TouchableOpacity style={styles.termsPrivacyView} activeOpacity={0.5}>
         <Text style={styles.termsPrivacytxt}>Terms & Conditions / privacy</Text>
       </TouchableOpacity>
-      <LoginRBSheet ref={refSheet} />
+      {/* <LoginRBSheet ref={refSheet} /> */}
     </View>
   );
 };

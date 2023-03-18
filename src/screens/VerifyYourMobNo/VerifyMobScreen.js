@@ -17,12 +17,12 @@ const VerifyMobScreen = ({...props}) => {
   //================= useState ======================//
   const [focused, setFocused] = useState();
   const [OTP, setOTP] = useState('');
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(10);
   //================= useEffect =================//
   useEffect(() => {
     setTimeout(() => {
-      if (seconds <= 9) {
-        setSeconds(seconds + 1);
+      if (seconds >= 9) {
+        setSeconds(seconds - 1);
       }
       //  else if (seconds === 10) {
       //   setSeconds(0);
@@ -81,20 +81,19 @@ const VerifyMobScreen = ({...props}) => {
       </View>
       <TouchableOpacity
         onPress={() => {
-          seconds === 10 ? setSeconds(!seconds) : NULL;
+          seconds === 0 ? setSeconds(!seconds) : NULL;
         }}
         style={[
           styles.sendCodeOpacity,
           {
-            backgroundColor:
-              seconds === 10 ? Colors.deeppink : Colors.gainsboro,
+            backgroundColor: seconds === 0 ? Colors.deeppink : Colors.gainsboro,
           },
         ]}
         activeOpacity={0.85}>
         <Text style={[styles.sendCodeTxt, {}]}>Send code again</Text>
       </TouchableOpacity>
 
-      {seconds === 10 ? (
+      {seconds === 0 ? (
         <></>
       ) : (
         <Text style={{marginHorizontal: 15}}>

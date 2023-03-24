@@ -26,8 +26,8 @@ export default StyleSheet.create({
   leftImg: {
     tintColor: Colors.white,
     resizeMode: 'contain',
-    width: 35,
-    height: 30,
+    width: 20,
+    height: 20,
   },
   topViewTxt: {
     color: Colors.white,

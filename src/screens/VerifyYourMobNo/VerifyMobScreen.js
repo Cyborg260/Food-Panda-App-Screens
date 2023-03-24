@@ -21,12 +21,13 @@ const VerifyMobScreen = ({...props}) => {
   //================= useEffect =================//
   useEffect(() => {
     setTimeout(() => {
-      if (seconds >= 9) {
+      if (seconds > 0) {
         setSeconds(seconds - 1);
       }
       //  else if (seconds === 10) {
       //   setSeconds(0);
       // }
+      console.log(seconds);
     }, 1000);
   }, [seconds]);
 
@@ -81,7 +82,7 @@ const VerifyMobScreen = ({...props}) => {
       </View>
       <TouchableOpacity
         onPress={() => {
-          seconds === 0 ? setSeconds(!seconds) : NULL;
+          seconds === 0 ? setSeconds(10) : false;
         }}
         style={[
           styles.sendCodeOpacity,

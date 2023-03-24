@@ -128,7 +128,10 @@ const CustomDrawer = ({...props}) => {
               <TouchableOpacity
                 style={styles.logOutOpacity}
                 activeOpacity={0.85}
-                onPress={() => BackHandler.exitApp()}>
+                onPress={() => {
+                  setLogoutModalView(false),
+                    navigation.navigate(ScreenNames.EnterLocation);
+                }}>
                 <Text style={styles.logOutTxt}>Log out</Text>
               </TouchableOpacity>
             </View>

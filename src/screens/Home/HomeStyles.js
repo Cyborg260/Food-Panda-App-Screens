@@ -14,8 +14,8 @@ export default StyleSheet.create({
   backBtn: {
     tintColor: 'deeppink',
     resizeMode: 'stretch',
-    width: 25,
-    height: 30,
+    width: 20,
+    height: 20,
   },
   backBtnOpacity: {
     position: 'absolute',

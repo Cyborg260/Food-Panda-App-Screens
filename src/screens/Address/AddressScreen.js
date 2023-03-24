@@ -1,6 +1,6 @@
 import {View, Text, SafeAreaView, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import styles from '../../screens/Orders&Reordering/Orders&ReorderingStyles';
+import styles from '../../screens/Address/AddressScreenStyles';
 import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNames} from '../../navigations/AppStack';
@@ -13,7 +13,7 @@ const AddressScreen = () => {
         <TouchableOpacity
           activeOpacity={0.85}
           onPress={() => navigation.goBack()}>
-          <Image style={styles.crossImg} source={images.lefticon} />
+          <Image style={styles.leftImage} source={images.lefticon} />
         </TouchableOpacity>
         <Text style={styles.topViewTxt}>Address</Text>
       </View>

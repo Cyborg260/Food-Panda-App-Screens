@@ -52,7 +52,7 @@ export default StyleSheet.create({
   img: {
     tintColor: Colors.deeppink,
     resizeMode: 'stretch',
-    width: 30,
-    height: 40,
+    width: 20,
+    height: 20,
   },
 });

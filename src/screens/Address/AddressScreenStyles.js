@@ -16,11 +16,11 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
 
-  crossImg: {
+  leftImage: {
     tintColor: Colors.deeppink,
     resizeMode: 'contain',
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
     marginHorizontal: 15,
   },
   topViewTxt: {

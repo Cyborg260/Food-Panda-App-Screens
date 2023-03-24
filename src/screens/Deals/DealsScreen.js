@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
   img: {
     tintColor: 'deeppink',
     resizeMode: 'stretch',
-    width: 32,
-    height: 42,
+    width: 20,
+    height: 20,
   },
   indicator: {
     alignItems: 'center',

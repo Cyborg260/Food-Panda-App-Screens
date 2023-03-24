@@ -19,8 +19,8 @@ export default StyleSheet.create({
   lefticon: {
     tintColor: Colors.white,
     resizeMode: 'contain',
-    width: 36,
-    height: 30,
+    width: 20,
+    height: 20,
   },
   topViewTxt: {
     color: Colors.white,

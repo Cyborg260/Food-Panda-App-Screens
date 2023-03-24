@@ -162,7 +162,7 @@ export default StyleSheet.create({
     tintColor: 'deeppink',
     resizeMode: 'contain',
     width: 20,
-    height: 28,
+    height: 20,
   },
   backBtnView: {
     width: 30,

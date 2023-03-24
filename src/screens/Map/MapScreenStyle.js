@@ -72,8 +72,8 @@ export default StyleSheet.create({
   leftImg: {
     tintColor: Colors.deeppink,
     resizeMode: 'contain',
-    width: 32,
-    height: 32,
+    width: 20,
+    height: 20,
     // backgroundColor:Colors.black,
     marginRight: 10,
   },

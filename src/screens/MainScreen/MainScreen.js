@@ -16,8 +16,6 @@ import LogInRBSheet from '../../components/RBSheets/LogInRBSheet';
 import TopView from '../../components/TopView/TopView';
 
 const MainScreen = () => {
-  const refSheet = useRef();
-  console.log(refSheet,"=========mainScreen ref");
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={Colors.deeppink} />
@@ -32,7 +30,6 @@ const MainScreen = () => {
         )}>
         <ItemsScreen />
       </ScrollView>
-      <LogInRBSheet />
     </SafeAreaView>
   );
 };

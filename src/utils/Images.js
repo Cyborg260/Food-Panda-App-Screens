@@ -20,6 +20,8 @@ export const images = {
   ticketIcon: require('../assets/images/icons8-ticket-16.png'),
   trophyIcon: require('../assets/images/icons8-trophy-16.png'),
   plusImg: require('../assets/images/plus.png'),
+  maleUserImg:require("../assets/images/maleUser.png"),
+  tickImg: require('../assets/images/tick.png'),
   emptyAddress: require('../assets/images/emptyAddress.png'),
   subtractImg: require('../assets/images/subtract.png'),
   shareIcon: require('../assets/images/share-icon.png'),

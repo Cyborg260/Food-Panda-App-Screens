@@ -7,19 +7,11 @@ import {images} from '../../utils/Images';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNames} from '../../navigations/AppStack';
 
-const logInRBSheet = () => {
-  //===================== useEffect =======================//
-  useEffect(() => {
-    setTimeout(() => {
-      ref.current.open();
-    }, 2000);
-  }, []);
-  const ref = useRef();
-  console.log(ref, '============== rbsheet ref');
+const logInRBSheet = ({rbSheetRef}) => {
   const navigation = useNavigation();
   return (
     <RBSheet
-      ref={ref}
+      ref={rbSheetRef}
       closeOnDragDown={true}
       closeOnPressMask={true}
       height={340}
@@ -30,7 +22,7 @@ const logInRBSheet = () => {
           borderTopRightRadius: 25,
         },
         draggableIcon: {
-          backgroundColor: Colors.gainsboro,
+          backgroundColor: Colors.disableButton,
           width: 50,
         },
       }}>
@@ -59,6 +51,7 @@ const logInRBSheet = () => {
           tintColor: Colors.white,
         }}
         isShadow={true}
+        // navigation={()=>{navigation.navigate}}
       />
       <View style={styles.lineView}>
         <View style={styles.line}></View>

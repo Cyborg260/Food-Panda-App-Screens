@@ -21,7 +21,7 @@ const LoginDrawer = ({drawerNav}) => {
           activeOpacity={0.85}
           onPress={() => {
             drawerNav.closeDrawer();
-            //  refSheet.current.open();
+             refSheet.current.open();
           }}>
           <Text style={styles.profileViewTxt}>Log in / Create account</Text>
         </TouchableOpacity>
@@ -36,7 +36,7 @@ const LoginDrawer = ({drawerNav}) => {
       <TouchableOpacity style={styles.termsPrivacyView} activeOpacity={0.5}>
         <Text style={styles.termsPrivacytxt}>Terms & Conditions / privacy</Text>
       </TouchableOpacity>
-      {/* <LoginRBSheet ref={refSheet} /> */}
+      <LoginRBSheet rbSheetRef={refSheet} />
     </View>
   );
 };

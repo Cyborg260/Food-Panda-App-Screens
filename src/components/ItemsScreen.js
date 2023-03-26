@@ -6,7 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useRef} from 'react';
 //import packages//
 import {useNavigation} from '@react-navigation/native';
 //import Screen//
@@ -15,8 +15,10 @@ import ItemScreenStyles from '../assets/styles/ItemScreenStyles';
 import {images} from '../utils/Images';
 import {Colors} from '../utils/colors';
 import {ScreenNames} from '../navigations/AppStack';
+import AccountsBottomSheet from './RBSheets/AccountsRBSheet';
 
 const ItemsScreen = () => {
+  const refSheet = useRef();
   const navigation = useNavigation();
   const renderItem = ({item}) => {
     // console.log(item, '=================item');
@@ -564,7 +566,9 @@ const ItemsScreen = () => {
 
   const renderEightView = () => {
     return (
-      <TouchableOpacity activeOpacity={0.85}>
+      <TouchableOpacity
+        activeOpacity={0.85}
+        onPress={() => refSheet.current.open()}>
         {/* //FoodPanda Logo// */}
         <View
           style={{
@@ -625,6 +629,7 @@ const ItemsScreen = () => {
       {renderSixthView()}
       {renderSeventhView()}
       {renderEightView()}
+      <AccountsBottomSheet rbSheetRef={refSheet} />
     </View>
   );
 };
